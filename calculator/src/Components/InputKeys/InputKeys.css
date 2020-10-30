@@ -1,1 +1,34 @@
-/* No CSS *//*# sourceMappingURL=InputKeys.css.map */
+.keypad {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.keypad button {
+  color: black;
+  background: white;
+  border: 2px solid gray;
+  border-radius: 10px;
+  width: 50px;
+  height: 50px;
+  margin: 0.5rem;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.keypad button:hover {
+  background: linear-gradient(45deg, #58e0b8 0%, #9f42d1 33%, #fc6262 66%, #fcb11b 100%);
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.keypad-wrap {
+  padding: 1rem;
+  position: relative;
+  border-radius: 10px;
+  background: linear-gradient(265deg, #58e0b8 0%, #9f42d1 33%, #fc6262 66%, #fcb11b 100%);
+  padding: 3px;
+}
+/*# sourceMappingURL=InputKeys.css.map */
