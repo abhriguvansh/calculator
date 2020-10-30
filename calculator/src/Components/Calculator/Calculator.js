@@ -23,19 +23,17 @@ class Calculator extends Component {
       });
     }
   }
-  onClick(button) {
+  onClick = (button) => {
     if (button === '=') {
       this.calculate();
     } else if (button === 'C') {
       this.reset();
-    } else if (button === 'CE') {
-      this.backspace();
     } else {
       this.setState({
         result: this.state.result + button,
       });
     }
-  }
+  };
   reset() {
     this.setState({
       result: '',
@@ -49,12 +47,9 @@ class Calculator extends Component {
   }
   render() {
     return (
-      <div>
-        <div className='calculator-body'>
-          <h1>Simple Calculator</h1>
-          <ResultComponent result={this.state.result} />
-          <KeyPadComponent onClick={this.onClick} />
-        </div>
+      <div className='calculator'>
+        <Result result={this.state.result} />
+        <InputKeys onClick={this.onClick} />
       </div>
     );
   }
