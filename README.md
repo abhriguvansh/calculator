@@ -26,9 +26,11 @@ Local server hosted on :3000 so although calculators can pull real time data, it
 
 As a result, even though the app is hosted on heroku, it will only work if ran locally.
 
-When you enter a calculation, the result shows up multiple times
+Results that come in from the server are rendered multiple times
 
 The result is displayed, as opposed to the entire operation
+
+The prompt asked for the last 10 results, this shows all with a scrollbar for overflow
 
 ## How To Run (Locally)
 
