@@ -55,7 +55,10 @@ class Calculator {
     this.operation = undefined;
     this.previousOperand = '';
     let socket = io();
-    socket.emit('calculation', this.currentOperand);
+    socket.emit('calculate', this.currentOperand);
+    socket.on('calculate', function (result) {
+      $('.results').append($('<h2>').text(result));
+    });
   }
 
   getDisplayNumber(number) {
@@ -124,6 +127,7 @@ operationButtons.forEach((button) => {
 
 equalsButton.addEventListener('click', (button) => {
   calculator.compute();
+
   calculator.updateDisplay();
 });
 

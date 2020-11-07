@@ -3,13 +3,15 @@ const app = express();
 const http = require('http').createServer(app);
 const path = require('path');
 var io = require('socket.io')(http);
+app.use(express.static(__dirname));
 
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');
+  res.sendFile(__dirname + '/styles.css');
+  res.sendFile(__dirname + '/calculator.js');
 });
 
 io.on('connection', (socket) => {
-  console.log('a user has connected');
   socket.on('calculate', (result) => {
     io.emit('calculate', result);
     console.log('result: ' + result);
